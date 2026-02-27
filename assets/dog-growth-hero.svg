@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Dog Growth Calculator Illustration</title>
+  <desc id="desc">Decorative illustration for dog weight calculator homepage</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#edf7ff"/>
+      <stop offset="100%" stop-color="#fff3df"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5fbff"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="620" rx="34" fill="url(#bg)"/>
+  <g transform="translate(70 64)">
+    <rect width="340" height="486" rx="24" fill="url(#card)" stroke="#d3e3f0"/>
+    <rect x="28" y="32" width="184" height="28" rx="14" fill="#dff0ff"/>
+    <rect x="28" y="86" width="286" height="58" rx="12" fill="#ffffff" stroke="#d4e3f0"/>
+    <rect x="28" y="162" width="286" height="58" rx="12" fill="#ffffff" stroke="#d4e3f0"/>
+    <rect x="28" y="238" width="286" height="58" rx="12" fill="#ffffff" stroke="#d4e3f0"/>
+    <rect x="28" y="324" width="190" height="56" rx="14" fill="#0f5b8d"/>
+    <text x="123" y="359" font-size="22" text-anchor="middle" fill="#ffffff" font-family="Manrope, Arial, sans-serif">Calculate</text>
+  </g>
+  <g transform="translate(454 72)">
+    <ellipse cx="160" cy="446" rx="165" ry="38" fill="#dceaf7"/>
+    <path d="M94 206c0-66 47-118 106-118 60 0 109 52 109 118v114H94z" fill="#f0b56f"/>
+    <circle cx="171" cy="154" r="94" fill="#f8d7a8"/>
+    <ellipse cx="137" cy="151" rx="17" ry="22" fill="#213243"/>
+    <ellipse cx="206" cy="151" rx="17" ry="22" fill="#213243"/>
+    <ellipse cx="172" cy="186" rx="22" ry="14" fill="#18212c"/>
+    <path d="M147 214c14 15 36 15 50 0" stroke="#18212c" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="102" cy="120" rx="34" ry="52" fill="#f0b56f"/>
+    <ellipse cx="242" cy="120" rx="34" ry="52" fill="#f0b56f"/>
+    <rect x="84" y="316" width="50" height="116" rx="21" fill="#f0b56f"/>
+    <rect x="148" y="316" width="50" height="116" rx="21" fill="#f0b56f"/>
+    <rect x="212" y="316" width="50" height="116" rx="21" fill="#f0b56f"/>
+  </g>
+</svg>

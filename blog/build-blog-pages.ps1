@@ -122,9 +122,11 @@ foreach ($p in $posts) {
   <meta property="og:title" content="$title">
   <meta property="og:description" content="$desc">
   <meta property="og:url" content="https://dogweightcalculator.uk/blog/$($p.Slug)/">
+  <meta property="og:image" content="https://dogweightcalculator.uk/assets/blog-guide-cover.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="$title">
   <meta name="twitter:description" content="$desc">
+  <meta name="twitter:image" content="https://dogweightcalculator.uk/assets/blog-guide-cover.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
@@ -145,7 +147,7 @@ foreach ($p in $posts) {
       "@type": "Organization",
       "name": "dogweightcalculator.uk"
     },
-    "keywords": ["$($p.MainKw)", "dog weight calculator", "puppy growth calculator"]
+    "keywords": ["$($p.MainKw)", "dog growth guide", "puppy weight chart"]
   }
   </script>
 </head>
@@ -158,10 +160,29 @@ foreach ($p in $posts) {
     </header>
 
     <main class="article">
+      <img class="article-cover" src="/assets/blog-guide-cover.svg" alt="Dog growth and puppy weight guide illustration">
+      <section class="article-tools" aria-label="Quick tools">
+        <h2>Quick Tools</h2>
+        <div class="tool-links">
+          <a href="/#calculator">Adult Weight Calculator</a>
+          <a href="/#chart">Puppy Growth Chart</a>
+          <a href="/#faq">FAQ and Accuracy Notes</a>
+        </div>
+      </section>
 $body
       <div class="cta-box">
         <p><strong>Try the calculator:</strong> Use our <a href="/">Dog Weight Calculator UK</a> to estimate adult size in kg/lb.</p>
       </div>
+      <section class="related" aria-label="Related guides">
+        <h2>Related Guides</h2>
+        <ul>
+          <li><a href="/blog/puppy-weight-calculator-guide/">Puppy Weight Calculator Guide</a></li>
+          <li><a href="/blog/dog-weight-calculator-guide/">Dog Weight Calculator Guide</a></li>
+          <li><a href="/blog/how-big-will-my-puppy-get-guide/">How Big Will My Puppy Get?</a></li>
+          <li><a href="/blog/puppy-growth-calculator-explained/">Puppy Growth Calculator Explained</a></li>
+          <li><a href="/blog/puppy-size-calculator-guide/">Puppy Size Calculator Guide</a></li>
+        </ul>
+      </section>
     </main>
 
     <footer class="footer">
