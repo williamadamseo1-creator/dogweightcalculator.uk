@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dog Weight Calculator UK | Estimate Adult Dog Weight (kg/lb)</title>
-  <meta name="description" content="Free Dog Weight Calculator for UK owners. Estimate your puppy's adult weight in kg or lb using age, current weight, and breed size class. Fast and mobile-friendly.">
+  <title>Dog Weight Calculator UK | Puppy Weight, Growth & Size Calculator</title>
+  <meta name="description" content="Free Dog Weight Calculator and Puppy Growth Calculator. Find out how big your puppy will get, estimate adult dog weight, and use quick kg/lb conversion.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://dogweightcalculator.uk/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dog Weight Calculator UK">
-  <meta property="og:description" content="Estimate your puppy's adult dog weight in kg or lb.">
+  <meta property="og:description" content="Puppy weight calculator, dog size calculator, and growth guide in kg/lb.">
   <meta property="og:url" content="https://dogweightcalculator.uk/">
   <meta property="og:site_name" content="Dog Weight Calculator UK">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dog Weight Calculator UK">
-  <meta name="twitter:description" content="Estimate adult dog weight by age and current weight.">
+  <meta name="twitter:description" content="Estimate adult dog weight and puppy growth in kg/lb.">
+  <meta name="author" content="dogweightcalculator.uk">
   <meta name="theme-color" content="#103f6e">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,10 +61,34 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How accurate is this dog weight calculator?",
+        "name": "How accurate is this dog weight calculator and puppy weight estimator?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "It gives an estimate based on typical growth curves by size class. Accuracy improves when your puppy is between 12 and 40 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How big will my puppy get?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use current weight, age, and size class to estimate an adult weight range and midpoint. It is a realistic projection, not an exact final weight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When do puppies stop growing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Small dogs usually stop around 8 to 12 months, medium dogs around 12 months, large dogs around 15 to 18 months, and giant breeds up to 24 months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much will my dog weigh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The result gives a low-to-high estimated adult weight plus a midpoint, based on growth stage and size class."
         }
       },
       {
@@ -104,13 +129,19 @@
   <header class="hero" id="top">
     <nav class="top-nav" aria-label="Primary">
       <a href="#calculator">Calculator</a>
+      <a href="#chart">Weight Chart</a>
       <a href="#guide">Growth Guide</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="hero-content">
       <p class="eyebrow">UK Puppy Growth Tool</p>
       <h1>Dog Weight Calculator</h1>
-      <p class="subhead">Estimate your puppy's adult dog weight using age, current weight, and size class. Built for fast UK use in both <strong>kg</strong> and <strong>lb</strong>.</p>
+      <p class="subhead">Estimate your puppy's adult dog weight using age, current weight, and size class. Use it as a <strong>puppy weight calculator</strong>, <strong>dog size calculator</strong>, and <strong>puppy growth calculator</strong> in one.</p>
+      <div class="kw-chips" aria-label="Popular searches">
+        <span>How big will my puppy get?</span>
+        <span>How much will my dog weigh?</span>
+        <span>When do puppies stop growing?</span>
+      </div>
       <a class="cta" href="#calculator">Calculate Now</a>
     </div>
   </header>
@@ -167,12 +198,56 @@
       <div id="result" class="result" aria-live="polite">
         <p class="placeholder">Your result will appear here.</p>
       </div>
+
+      <section class="mini-converter" aria-labelledby="converter-heading">
+        <h3 id="converter-heading">Quick Dog Weight Converter (kg/lb)</h3>
+        <div class="converter-grid">
+          <label>
+            Value
+            <input id="convertValue" type="number" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 10">
+          </label>
+          <label>
+            Convert
+            <select id="convertDirection">
+              <option value="kg-to-lb">kg to lb</option>
+              <option value="lb-to-kg">lb to kg</option>
+            </select>
+          </label>
+        </div>
+        <p id="convertResult" class="convert-result">Converted value appears here.</p>
+      </section>
+    </section>
+
+    <section class="card chart" id="chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Puppy Weight Chart by Age (Adult Weight %)</h2>
+      <p>Use this dog growth chart as a quick benchmark. Your calculator estimate is personalised and usually more useful than a generic puppy weight chart.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Estimated percentage of adult weight reached</caption>
+          <thead>
+            <tr>
+              <th scope="col">Age</th>
+              <th scope="col">Small</th>
+              <th scope="col">Medium</th>
+              <th scope="col">Large</th>
+              <th scope="col">Giant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>8 weeks</td><td>25%</td><td>18%</td><td>13%</td><td>10%</td></tr>
+            <tr><td>4 months</td><td>55%</td><td>43%</td><td>32%</td><td>26%</td></tr>
+            <tr><td>6 months</td><td>82%</td><td>66%</td><td>52%</td><td>42%</td></tr>
+            <tr><td>9 months</td><td>95%</td><td>82%</td><td>67%</td><td>55%</td></tr>
+            <tr><td>12 months</td><td>100%</td><td>93%</td><td>79%</td><td>66%</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="card" id="guide" aria-labelledby="guide-heading">
-      <h2 id="guide-heading">How This Puppy Weight Calculator Works</h2>
+      <h2 id="guide-heading">How Big Will My Puppy Get? Growth Guide</h2>
       <p class="last-updated">Last updated: <time datetime="2026-02-27">27 February 2026</time></p>
-      <p>This tool estimates adult weight using age-based growth curves for four size classes. It calculates how much of adult weight your dog has likely reached, then projects a realistic range.</p>
+      <p>This dog weight predictor estimates adult size using age-based growth curves for four classes. It calculates the percent of adult weight already reached, then projects a realistic range.</p>
       <div class="size-grid">
         <article>
           <h3>Small Dogs</h3>
@@ -191,6 +266,7 @@
           <p>Longest growth curve. Some giant breeds keep filling out until roughly 18-24 months.</p>
         </article>
       </div>
+      <p class="breed-note">Breed examples: Yorkie, Chihuahua, Labrador, German Shepherd, Golden Retriever, and Great Dane puppies can all follow different growth rates even inside the same size class.</p>
     </section>
 
     <section class="card faq" id="faq" aria-labelledby="faq-heading">
@@ -200,12 +276,28 @@
         <p>It is an informed estimate, not a diagnosis. Accuracy depends on breed genetics, diet, activity, and health. The best window is usually 12-40 weeks.</p>
       </details>
       <details>
+        <summary>How big will my puppy get?</summary>
+        <p>Use your puppy's current weight, age, and size class. The calculator returns an adult range plus a midpoint. This is a practical puppy size estimator, not an exact final value.</p>
+      </details>
+      <details>
+        <summary>When do puppies stop growing?</summary>
+        <p>Small breeds often finish by 8-12 months, medium breeds around 12 months, large breeds 15-18 months, and giant breeds can continue up to 24 months.</p>
+      </details>
+      <details>
+        <summary>How much will my dog weigh?</summary>
+        <p>You get an estimated adult range in kg and lb, plus a midpoint. The midpoint is useful for planning food portions and tracking growth trends over time.</p>
+      </details>
+      <details>
         <summary>Can this predict exact adult weight?</summary>
         <p>No calculator can guarantee exact adult size. Use the provided range and consult your vet for personalised guidance.</p>
       </details>
       <details>
         <summary>Does this work for mixed-breed dogs?</summary>
         <p>Yes, but mixed breeds can vary more. Choose the closest size class based on expected adult frame.</p>
+      </details>
+      <details>
+        <summary>Is this a dog size calculator and dog growth calculator too?</summary>
+        <p>Yes. It functions as a dog weight calculator, dog size predictor, and puppy growth calculator using one unified model.</p>
       </details>
       <p class="disclaimer"><strong>Medical disclaimer:</strong> This website is for educational use only and does not replace veterinary advice.</p>
     </section>

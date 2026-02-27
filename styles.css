@@ -89,6 +89,25 @@ h1 {
   font-size: 1.07rem;
 }
 
+.kw-chips {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.kw-chips span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cfdce8;
+  background: rgba(255, 255, 255, 0.82);
+  color: #1d3850;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .cta {
   display: inline-block;
   margin-top: 1.35rem;
@@ -241,6 +260,68 @@ button[type="submit"] {
   background: #fff8ec;
 }
 
+.mini-converter {
+  margin-top: 1.05rem;
+  border-top: 1px solid #e5ebf2;
+  padding-top: 0.95rem;
+}
+
+.mini-converter h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.07rem;
+}
+
+.converter-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.convert-result {
+  margin: 0.7rem 0 0;
+  font-weight: 700;
+  color: #1b3a54;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dce5ee;
+  border-radius: 0.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 540px;
+  background: #ffffff;
+}
+
+caption {
+  text-align: left;
+  padding: 0.7rem 0.8rem;
+  font-weight: 700;
+  color: #34506a;
+  background: #f4f9ff;
+}
+
+th,
+td {
+  padding: 0.65rem 0.8rem;
+  border-top: 1px solid #e8eef4;
+  text-align: left;
+}
+
+th {
+  background: #f9fbff;
+}
+
+.breed-note {
+  margin: 0.95rem 0 0;
+  font-size: 0.92rem;
+  color: #334a5f;
+}
+
 .size-grid {
   display: grid;
   gap: 0.9rem;
@@ -326,6 +407,10 @@ button[type="submit"] {
     text-align: center;
   }
 
+  .kw-chips {
+    justify-content: center;
+  }
+
   h1 {
     margin-left: auto;
     margin-right: auto;
@@ -346,5 +431,9 @@ button[type="submit"] {
 
   .form-actions {
     flex-direction: column;
+  }
+
+  .converter-grid {
+    grid-template-columns: 1fr;
   }
 }

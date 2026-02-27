@@ -18,9 +18,42 @@ const growthCurves = {
 const form = document.getElementById("dogForm");
 const result = document.getElementById("result");
 const year = document.getElementById("year");
+const unitSelect = document.getElementById("unit");
+const weightInputEl = document.getElementById("weight");
+const ageUnitSelect = document.getElementById("ageUnit");
+const ageValueEl = document.getElementById("ageValue");
+const convertValueEl = document.getElementById("convertValue");
+const convertDirectionEl = document.getElementById("convertDirection");
+const convertResultEl = document.getElementById("convertResult");
 const defaultResultHTML = "<p class=\"placeholder\">Your result will appear here.</p>";
 
 year.textContent = new Date().getFullYear();
+
+function updateWeightPlaceholder() {
+  if (unitSelect.value === "lb") {
+    weightInputEl.placeholder = "e.g. 16.5";
+  } else {
+    weightInputEl.placeholder = "e.g. 7.5";
+  }
+}
+
+function updateAgePlaceholder() {
+  ageValueEl.placeholder = ageUnitSelect.value === "months" ? "e.g. 4" : "e.g. 16";
+}
+
+function updateConversionResult() {
+  const value = Number.parseFloat(convertValueEl.value);
+  if (!Number.isFinite(value) || value < 0) {
+    convertResultEl.textContent = "Converted value appears here.";
+    return;
+  }
+
+  if (convertDirectionEl.value === "kg-to-lb") {
+    convertResultEl.textContent = `${formatNumber(value)} kg = ${formatNumber(value * KG_TO_LB)} lb`;
+  } else {
+    convertResultEl.textContent = `${formatNumber(value)} lb = ${formatNumber(value / KG_TO_LB)} kg`;
+  }
+}
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
@@ -65,8 +98,19 @@ form.addEventListener("reset", () => {
   window.setTimeout(() => {
     result.classList.remove("result-good", "result-warn");
     result.innerHTML = defaultResultHTML;
+    updateWeightPlaceholder();
+    updateAgePlaceholder();
   }, 0);
 });
+
+unitSelect.addEventListener("change", updateWeightPlaceholder);
+ageUnitSelect.addEventListener("change", updateAgePlaceholder);
+convertValueEl.addEventListener("input", updateConversionResult);
+convertDirectionEl.addEventListener("change", updateConversionResult);
+
+updateWeightPlaceholder();
+updateAgePlaceholder();
+updateConversionResult();
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
