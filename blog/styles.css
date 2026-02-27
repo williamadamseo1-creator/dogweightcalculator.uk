@@ -39,7 +39,7 @@ a {
 
 .wrap {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -65,14 +65,15 @@ a {
 }
 
 .hero {
-  padding: 0.7rem 0 1.5rem;
+  padding: 0.9rem 0 1.5rem;
 }
 
 .hero h1 {
   margin: 0;
   line-height: 1.2;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-family: Fraunces, Georgia, serif;
+  max-width: 18ch;
 }
 
 .hero p {
@@ -83,7 +84,7 @@ a {
 
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-bottom: 2.2rem;
   min-width: 0;
@@ -96,6 +97,10 @@ a {
   background: var(--card);
   box-shadow: var(--shadow);
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .card h2 {
@@ -111,14 +116,22 @@ a {
   display: block;
 }
 
+.thumb-wrap {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d9e4ef;
+  border-radius: 0.8rem;
+  background: #f4f9ff;
+  margin-bottom: 0.85rem;
+  aspect-ratio: 16 / 9;
+}
+
 .thumb {
   display: block;
   width: 100%;
-  max-width: 100%;
-  border: 1px solid #d9e4ef;
-  border-radius: 0.8rem;
-  margin-bottom: 0.85rem;
-  background: #f4f9ff;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .meta {
@@ -141,10 +154,12 @@ a {
   padding: 0.55rem 0.8rem;
   font-weight: 700;
   background: #f7fbff;
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .article-wrap {
-  max-width: 860px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 0 1rem 2.2rem;
 }
@@ -171,6 +186,7 @@ a {
   border-radius: 1rem;
   padding: 1.35rem;
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
 .article-cover {
@@ -180,6 +196,8 @@ a {
   border: 1px solid #d8e4ee;
   margin-bottom: 1rem;
   background: #f4f9ff;
+  max-height: 360px;
+  object-fit: cover;
 }
 
 .article-tools {
@@ -304,6 +322,10 @@ a {
   .article p,
   .article li {
     font-size: 0.98rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.78rem, 8.4vw, 2.22rem);
   }
 }
 
