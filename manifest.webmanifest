@@ -1,0 +1,9 @@
+{
+  "name": "Dog Weight Calculator UK",
+  "short_name": "DogWeightCalc",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8ef",
+  "theme_color": "#103f6e",
+  "icons": []
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dog Weight Calculator UK | Estimate Adult Dog Weight (kg/lb)</title>
+  <meta name="description" content="Free Dog Weight Calculator for UK owners. Estimate your puppy's adult weight in kg or lb using age, current weight, and breed size class. Fast and mobile-friendly.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://dogweightcalculator.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dog Weight Calculator UK">
+  <meta property="og:description" content="Estimate your puppy's adult dog weight in kg or lb.">
+  <meta property="og:url" content="https://dogweightcalculator.uk/">
+  <meta property="og:site_name" content="Dog Weight Calculator UK">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dog Weight Calculator UK">
+  <meta name="twitter:description" content="Estimate adult dog weight by age and current weight.">
+  <meta name="theme-color" content="#103f6e">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dog Weight Calculator UK",
+    "url": "https://dogweightcalculator.uk/",
+    "inLanguage": "en-GB",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dogweightcalculator.uk/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dog Weight Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "url": "https://dogweightcalculator.uk/",
+    "inLanguage": "en-GB",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate is this dog weight calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It gives an estimate based on typical growth curves by size class. Accuracy improves when your puppy is between 12 and 40 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use pounds and kilograms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can switch between kg and lb at any time and the result is shown in both units."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I rely on this instead of veterinary advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This tool is educational and should not replace advice from your vet, especially for health or nutrition plans."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dogweightcalculator.uk/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="top-nav" aria-label="Primary">
+      <a href="#calculator">Calculator</a>
+      <a href="#guide">Growth Guide</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">UK Puppy Growth Tool</p>
+      <h1>Dog Weight Calculator</h1>
+      <p class="subhead">Estimate your puppy's adult dog weight using age, current weight, and size class. Built for quick UK use in both <strong>kg</strong> and <strong>lb</strong>.</p>
+      <a class="cta" href="#calculator">Calculate Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="card calculator" id="calculator" aria-labelledby="calc-heading">
+      <h2 id="calc-heading">Estimate Adult Dog Weight</h2>
+      <form id="dogForm" novalidate>
+        <div class="grid">
+          <label>
+            Unit
+            <select id="unit" name="unit" required>
+              <option value="kg">Kilograms (kg)</option>
+              <option value="lb">Pounds (lb)</option>
+            </select>
+          </label>
+
+          <label>
+            Current Weight
+            <input id="weight" name="weight" type="number" min="0.1" step="0.1" placeholder="e.g. 7.5" required>
+          </label>
+
+          <label>
+            Age Value
+            <input id="ageValue" name="ageValue" type="number" min="1" step="1" placeholder="e.g. 16" required>
+          </label>
+
+          <label>
+            Age Unit
+            <select id="ageUnit" name="ageUnit" required>
+              <option value="weeks">Weeks</option>
+              <option value="months">Months</option>
+            </select>
+          </label>
+
+          <label>
+            Breed Size Class
+            <select id="sizeClass" name="sizeClass" required>
+              <option value="small">Small (adult below 10kg)</option>
+              <option value="medium">Medium (adult 10-25kg)</option>
+              <option value="large">Large (adult 25-40kg)</option>
+              <option value="giant">Giant (adult over 40kg)</option>
+            </select>
+          </label>
+        </div>
+
+        <button type="submit">Calculate Adult Weight</button>
+        <p class="hint">Tip: best estimates usually come from puppies older than 8 weeks.</p>
+      </form>
+
+      <div id="result" class="result" aria-live="polite">
+        <p class="placeholder">Your result will appear here.</p>
+      </div>
+    </section>
+
+    <section class="card" id="guide" aria-labelledby="guide-heading">
+      <h2 id="guide-heading">How This Puppy Weight Calculator Works</h2>
+      <p>This tool estimates adult weight using age-based growth curves for four size classes. It calculates how much of adult weight your dog has likely reached, then projects a realistic range.</p>
+      <div class="size-grid">
+        <article>
+          <h3>Small Dogs</h3>
+          <p>Faster early growth and earlier maturity. Most reach near-adult size by around 8-12 months.</p>
+        </article>
+        <article>
+          <h3>Medium Dogs</h3>
+          <p>Steady growth pattern with most weight gain slowing by 12 months.</p>
+        </article>
+        <article>
+          <h3>Large Dogs</h3>
+          <p>Longer growth period. Weight often continues to increase until 15-18 months.</p>
+        </article>
+        <article>
+          <h3>Giant Dogs</h3>
+          <p>Longest growth curve. Some giant breeds keep filling out until roughly 18-24 months.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card faq" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Dog Weight Calculator FAQ</h2>
+      <details>
+        <summary>How accurate is this estimate?</summary>
+        <p>It is an informed estimate, not a diagnosis. Accuracy depends on breed genetics, diet, activity, and health. The best window is usually 12-40 weeks.</p>
+      </details>
+      <details>
+        <summary>Can this predict exact adult weight?</summary>
+        <p>No calculator can guarantee exact adult size. Use the provided range and consult your vet for personalised guidance.</p>
+      </details>
+      <details>
+        <summary>Does this work for mixed-breed dogs?</summary>
+        <p>Yes, but mixed breeds can vary more. Choose the closest size class based on expected adult frame.</p>
+      </details>
+      <p class="disclaimer"><strong>Medical disclaimer:</strong> This website is for educational use only and does not replace veterinary advice.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> dogweightcalculator.uk</p>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
