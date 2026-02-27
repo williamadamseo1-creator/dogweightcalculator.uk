@@ -41,6 +41,7 @@ body {
   margin: 0 auto 2rem;
   display: flex;
   gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .top-nav a {
@@ -186,6 +187,27 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+.form-actions {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.form-actions button {
+  flex: 1;
+  margin-top: 0;
+}
+
+.btn-secondary {
+  border: 1px solid #c8d4df;
+  border-radius: 0.7rem;
+  background: #f8fbff;
+  color: #17324c;
+  font-weight: 700;
+  min-height: 44px;
+  cursor: pointer;
+}
+
 .hint {
   margin: 0.55rem 0 0;
   font-size: 0.88rem;
@@ -256,6 +278,12 @@ button[type="submit"] {
   color: #304355;
 }
 
+.last-updated {
+  margin-top: -0.15rem;
+  color: #44586c;
+  font-size: 0.88rem;
+}
+
 .footer {
   max-width: 1040px;
   margin: 0 auto 2rem;
@@ -280,11 +308,43 @@ button[type="submit"] {
   }
 
   .hero {
-    padding-bottom: 3.5rem;
+    padding-bottom: 3rem;
   }
 
   .top-nav {
-    overflow-x: auto;
-    padding-bottom: 0.1rem;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+    gap: 0.55rem;
+  }
+
+  .top-nav a {
+    font-size: 0.92rem;
+    padding: 0.42rem 0.7rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subhead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta {
+    margin-top: 1rem;
+  }
+
+  .calculator h2 {
+    text-align: center;
+  }
+
+  .form-actions {
+    flex-direction: column;
   }
 }

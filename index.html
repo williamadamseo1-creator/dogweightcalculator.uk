@@ -110,7 +110,7 @@
     <div class="hero-content">
       <p class="eyebrow">UK Puppy Growth Tool</p>
       <h1>Dog Weight Calculator</h1>
-      <p class="subhead">Estimate your puppy's adult dog weight using age, current weight, and size class. Built for quick UK use in both <strong>kg</strong> and <strong>lb</strong>.</p>
+      <p class="subhead">Estimate your puppy's adult dog weight using age, current weight, and size class. Built for fast UK use in both <strong>kg</strong> and <strong>lb</strong>.</p>
       <a class="cta" href="#calculator">Calculate Now</a>
     </div>
   </header>
@@ -130,12 +130,12 @@
 
           <label>
             Current Weight
-            <input id="weight" name="weight" type="number" min="0.1" step="0.1" placeholder="e.g. 7.5" required>
+            <input id="weight" name="weight" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="e.g. 7.5" required>
           </label>
 
           <label>
             Age Value
-            <input id="ageValue" name="ageValue" type="number" min="1" step="1" placeholder="e.g. 16" required>
+            <input id="ageValue" name="ageValue" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 16" required>
           </label>
 
           <label>
@@ -157,7 +157,10 @@
           </label>
         </div>
 
-        <button type="submit">Calculate Adult Weight</button>
+        <div class="form-actions">
+          <button type="submit">Calculate Adult Weight</button>
+          <button type="reset" class="btn-secondary">Reset</button>
+        </div>
         <p class="hint">Tip: best estimates usually come from puppies older than 8 weeks.</p>
       </form>
 
@@ -168,6 +171,7 @@
 
     <section class="card" id="guide" aria-labelledby="guide-heading">
       <h2 id="guide-heading">How This Puppy Weight Calculator Works</h2>
+      <p class="last-updated">Last updated: <time datetime="2026-02-27">27 February 2026</time></p>
       <p>This tool estimates adult weight using age-based growth curves for four size classes. It calculates how much of adult weight your dog has likely reached, then projects a realistic range.</p>
       <div class="size-grid">
         <article>

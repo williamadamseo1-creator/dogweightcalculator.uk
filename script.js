@@ -18,6 +18,7 @@ const growthCurves = {
 const form = document.getElementById("dogForm");
 const result = document.getElementById("result");
 const year = document.getElementById("year");
+const defaultResultHTML = "<p class=\"placeholder\">Your result will appear here.</p>";
 
 year.textContent = new Date().getFullYear();
 
@@ -60,6 +61,13 @@ function renderMessage(type, html) {
   result.innerHTML = html;
 }
 
+form.addEventListener("reset", () => {
+  window.setTimeout(() => {
+    result.classList.remove("result-good", "result-warn");
+    result.innerHTML = defaultResultHTML;
+  }, 0);
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -75,6 +83,11 @@ form.addEventListener("submit", (event) => {
   }
 
   const ageWeeks = ageUnit === "months" ? ageValue * 4.345 : ageValue;
+  if ((ageUnit === "months" && ageValue > 24) || (ageUnit === "weeks" && ageValue > 120)) {
+    renderMessage("warn", "<p><strong>Age looks too high for puppy growth prediction.</strong> Please enter puppy age only.</p>");
+    return;
+  }
+
   if (ageWeeks < 6) {
     renderMessage("warn", "<p><strong>Too early for a reliable estimate.</strong> Try again when your puppy is at least 6-8 weeks old.</p>");
     return;
@@ -108,6 +121,7 @@ form.addEventListener("submit", (event) => {
       <p><strong>${formatNumber(lowKg)}-${formatNumber(highKg)} kg</strong> (${formatNumber(lowLb)}-${formatNumber(highLb)} lb)</p>
       <p>Most likely midpoint: <strong>${formatNumber(adultKg)} kg</strong> (${formatNumber(midLb)} lb)</p>
       <p><strong>${confidence}</strong>: ${confidenceText}</p>
+      <p>For feeding and health plans, confirm with your vet.</p>
     `
   );
 });
