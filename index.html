@@ -183,91 +183,92 @@
         <a href="/blog/">Blog</a>
       </nav>
     </div>
-    <div class="hero-content hero-layout">
-      <div>
-        <p class="eyebrow">UK Puppy Growth Tool</p>
-        <h1>Dog Weight Calculator</h1>
+    <div class="hero-content">
+      <p class="eyebrow">UK Puppy Growth Tool</p>
+      <h1>Dog Weight Calculator</h1>
+
+      <section class="card calculator calculator-abovefold" id="calculator" aria-labelledby="calc-heading">
+        <h2 id="calc-heading">Estimate Adult Dog Weight</h2>
+        <form id="dogForm" novalidate>
+          <div class="grid">
+            <label>
+              Unit
+              <select id="unit" name="unit" required>
+                <option value="kg">Kilograms (kg)</option>
+                <option value="lb">Pounds (lb)</option>
+              </select>
+            </label>
+
+            <label>
+              Current Weight
+              <input id="weight" name="weight" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="e.g. 7.5" required>
+            </label>
+
+            <label>
+              Age Value
+              <input id="ageValue" name="ageValue" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 16" required>
+            </label>
+
+            <label>
+              Age Unit
+              <select id="ageUnit" name="ageUnit" required>
+                <option value="weeks">Weeks</option>
+                <option value="months">Months</option>
+              </select>
+            </label>
+
+            <label>
+              Breed Size Class
+              <select id="sizeClass" name="sizeClass" required>
+                <option value="small">Small (adult below 10kg)</option>
+                <option value="medium">Medium (adult 10-25kg)</option>
+                <option value="large">Large (adult 25-40kg)</option>
+                <option value="giant">Giant (adult over 40kg)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Calculate Adult Weight</button>
+            <button type="reset" class="btn-secondary">Reset</button>
+          </div>
+          <p class="hint">Tip: best estimates usually come from puppies older than 8 weeks.</p>
+        </form>
+
+        <div id="result" class="result" aria-live="polite">
+          <p class="placeholder">Your result will appear here.</p>
+        </div>
+
+        <section class="mini-converter" aria-labelledby="converter-heading">
+          <h3 id="converter-heading">Quick Dog Weight Converter (kg/lb)</h3>
+          <div class="converter-grid">
+            <label>
+              Value
+              <input id="convertValue" type="number" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 10">
+            </label>
+            <label>
+              Convert
+              <select id="convertDirection">
+                <option value="kg-to-lb">kg to lb</option>
+                <option value="lb-to-kg">lb to kg</option>
+              </select>
+            </label>
+          </div>
+          <p id="convertResult" class="convert-result">Converted value appears here.</p>
+        </section>
+      </section>
+
+      <div class="tool-followup">
         <p class="subhead">Estimate adult dog weight fast using age, current weight, and size class in kg/lb.</p>
-        <a class="cta" href="#calculator">Calculate Now</a>
+        <a class="cta" href="#howto">How To Read Results</a>
+        <figure class="hero-media">
+          <img src="/assets/dog-growth-hero.svg" alt="Illustration of puppy growth and dog weight tracking">
+        </figure>
       </div>
-      <figure class="hero-media">
-        <img src="/assets/dog-growth-hero.svg" alt="Illustration of puppy growth and dog weight tracking">
-      </figure>
     </div>
   </header>
 
   <main>
-    <section class="card calculator" id="calculator" aria-labelledby="calc-heading">
-      <h2 id="calc-heading">Estimate Adult Dog Weight</h2>
-      <form id="dogForm" novalidate>
-        <div class="grid">
-          <label>
-            Unit
-            <select id="unit" name="unit" required>
-              <option value="kg">Kilograms (kg)</option>
-              <option value="lb">Pounds (lb)</option>
-            </select>
-          </label>
-
-          <label>
-            Current Weight
-            <input id="weight" name="weight" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="e.g. 7.5" required>
-          </label>
-
-          <label>
-            Age Value
-            <input id="ageValue" name="ageValue" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 16" required>
-          </label>
-
-          <label>
-            Age Unit
-            <select id="ageUnit" name="ageUnit" required>
-              <option value="weeks">Weeks</option>
-              <option value="months">Months</option>
-            </select>
-          </label>
-
-          <label>
-            Breed Size Class
-            <select id="sizeClass" name="sizeClass" required>
-              <option value="small">Small (adult below 10kg)</option>
-              <option value="medium">Medium (adult 10-25kg)</option>
-              <option value="large">Large (adult 25-40kg)</option>
-              <option value="giant">Giant (adult over 40kg)</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit">Calculate Adult Weight</button>
-          <button type="reset" class="btn-secondary">Reset</button>
-        </div>
-        <p class="hint">Tip: best estimates usually come from puppies older than 8 weeks.</p>
-      </form>
-
-      <div id="result" class="result" aria-live="polite">
-        <p class="placeholder">Your result will appear here.</p>
-      </div>
-
-      <section class="mini-converter" aria-labelledby="converter-heading">
-        <h3 id="converter-heading">Quick Dog Weight Converter (kg/lb)</h3>
-        <div class="converter-grid">
-          <label>
-            Value
-            <input id="convertValue" type="number" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 10">
-          </label>
-          <label>
-            Convert
-            <select id="convertDirection">
-              <option value="kg-to-lb">kg to lb</option>
-              <option value="lb-to-kg">lb to kg</option>
-            </select>
-          </label>
-        </div>
-        <p id="convertResult" class="convert-result">Converted value appears here.</p>
-      </section>
-    </section>
-
     <section class="card howto" id="howto" aria-labelledby="howto-heading">
       <h2 id="howto-heading">How to Use This Puppy Weight Calculator</h2>
       <ol class="step-list">
@@ -393,6 +394,117 @@
         </article>
       </div>
       <p><a class="inline-cta" href="/blog/">View All Blog Posts</a></p>
+    </section>
+
+    <section class="card long-guide" id="complete-guide" aria-labelledby="complete-guide-heading">
+      <h2 id="complete-guide-heading">Complete Dog Weight Calculator UK Guide (SEO Reference)</h2>
+      <p>If you are searching for a reliable dog weight calculator, puppy weight calculator, puppy growth calculator, or dog size calculator, this complete reference is designed for you. The goal of this section is simple: help you understand exactly how to estimate weight, how to interpret growth data, and how to make day-to-day decisions that protect your dog's health. Many owners ask, "how big will my puppy get" or "how much will my dog weigh." Those are important questions, but accurate answers come from combining age, weight, size class, trend tracking, and sensible interpretation.</p>
+      <p>Most people use a dog weight calculator one time and then stop. That approach usually leads to confusion because growth is dynamic. A better system is weekly tracking. Repeated inputs build stronger forecasts, especially when you use a puppy growth chart, puppy weight chart, and body condition checks together. This guide covers small breeds, medium breeds, large breeds, and giant breeds. It also includes practical breed examples such as Yorkshire Terrier, Chihuahua, Labrador, German Shepherd, French Bulldog, and Great Dane.</p>
+
+      <h3>Why Weight Estimation Matters Beyond Curiosity</h3>
+      <p>Weight estimation is not only about knowing a final number. It affects feeding amounts, nutrition quality, exercise intensity, crate sizing, harness fit, and long-term joint health. For large and giant breeds, growth speed management is critical. For toy and small breeds, overfeeding can quickly increase fat mass and reduce mobility quality. When owners use a dog weight predictor consistently, they can spot problems early, improve feeding decisions, and reduce stress around development milestones.</p>
+      <p>A puppy weight estimator also helps financial planning. Adult size influences monthly food cost, preventive care, accessory replacement, and travel preparation. Knowing whether your puppy is trending toward small, medium, large, or giant class helps you make smarter purchases and avoid repeated mistakes.</p>
+
+      <h3>Core Search Intents This Guide Solves</h3>
+      <p>This page is written to satisfy high-intent questions: puppy weight calculator, dog weight calculator, puppy size calculator, dog size predictor, puppy growth calculator, dog growth chart, puppy weight chart, and how big will my puppy get calculator. You will also find guidance for related breed terms and scenario terms such as yorkie weight calculator, german shepherd weight calculator, chihuahua growth chart, great dane weight, french bulldog weight, labrador puppy growth, and when do puppies stop growing.</p>
+
+      <h3>How a Puppy Weight Calculator Works</h3>
+      <p>A puppy weight calculator estimates adult weight from age, current weight, and expected size class. Behind the interface, growth models estimate what percentage of adult mass puppies usually reach at each age stage. If your puppy weighs 7 kg and a model estimates that at the current age this is around 40 percent of adult size, the midpoint projection becomes roughly 17.5 kg. Better tools do not return one value only. They return a range and confidence context because real growth varies by genetics, feeding quality, and health conditions.</p>
+      <p>This is why a puppy size estimator and dog size calculator are more useful than random online comparisons. You get structured outputs that can be logged and compared week by week.</p>
+
+      <h3>How to Get Better Accuracy in Real Life</h3>
+      <p>Input quality is everything. Use the same scale, weigh your dog at similar times of day, and avoid mixing kg/lb records without conversion checks. Enter exact age in weeks or months. Choose size class honestly. Many underestimates happen because owners select "small" when frame structure clearly suggests medium or large. If your puppy is mixed-breed, run two nearby class scenarios (for example, medium and large) and compare trend alignment over four to six weeks.</p>
+      <p>For advanced accuracy, record body condition score, appetite consistency, stool quality, activity changes, and food transitions. A dog weight estimator becomes significantly stronger when you pair numeric data with daily observations.</p>
+
+      <h3>How to Read the Output Range</h3>
+      <p>A typical output includes low estimate, high estimate, midpoint estimate, and confidence notes. Treat midpoint as planning anchor, not absolute truth. Use low-high range for practical decisions like crate upgrades, harness selection, and expected feeding volume. A wider range does not mean the calculator failed. It usually means your dog is in an age window with naturally higher growth variability.</p>
+      <p>As your puppy grows and you keep logging data, range width often narrows. That is normal model refinement. This is also why a puppy growth calculator should be used repeatedly, not once.</p>
+
+      <h3>Dog Growth Chart vs Dog Weight Calculator</h3>
+      <p>A dog growth chart shows broad developmental patterns by age. A dog weight calculator gives personalised estimates based on your current data. Use both together. Growth charts give context. Calculators provide actionable projections. When chart and calculator align, confidence improves. If they diverge heavily, recheck your entries first, then review feeding, activity, and health factors.</p>
+      <p>The same logic applies to puppy growth chart and puppy weight chart queries. Charts are references. Calculators are planning tools.</p>
+
+      <h3>When Do Puppies Stop Growing?</h3>
+      <p>One of the highest-intent questions is "when do puppies stop growing." Small breeds usually mature earlier, medium breeds around the first year, large breeds later, and giant breeds can continue filling out well beyond one year. These are patterns, not strict deadlines. Your own trend data is more valuable than generic timelines. If your dog continues to gain weight past expected age windows, check whether gain is lean growth or excess body fat.</p>
+
+      <h3>How Big Will My Puppy Get?</h3>
+      <p>Another major question is "how big will my puppy get." The best answer is a range supported by weekly data. You should not expect one fixed final number early in growth. Build confidence through repeated weigh-ins and class validation. If results shift over time, that is usually refinement, not failure. A practical approach is to review trend direction every week and make small adjustments, not abrupt corrections.</p>
+
+      <h3>How Much Will My Dog Weigh as an Adult?</h3>
+      <p>If you search "how much will my dog weigh," use midpoint for planning and range for risk management. Midpoint helps meal planning, while range helps budget, accessory sizing, and expectation setting. Adult weight depends on sex, frame, neuter timing, diet quality, and overall activity. This is why a dog weight predictor should always be used with body condition review.</p>
+
+      <h3>Small Breed Dogs and Toy Dog Breeds</h3>
+      <p>Small breed dogs and toy dog breeds such as Chihuahua or Yorkie can gain or lose condition quickly. Their margins are tight, so overfeeding and underfeeding both have noticeable impact. If you are looking for yorkie weight calculator or chihuahua growth chart guidance, focus on steady trends and body condition, not social-media comparison photos. Tiny breeds can appear "healthy and round" while actually carrying excess fat.</p>
+      <p>For toy breeds, weekly tracking is powerful because even small absolute changes represent meaningful percentage differences.</p>
+
+      <h3>Medium Breed Development</h3>
+      <p>Medium dogs often show balanced progression but still need structured monitoring. A puppy size calculator helps confirm whether development is tracking as expected. Medium breeds can be affected by over-treating and under-structured feeding as much as larger dogs. Keep calories controlled and reevaluate portions with each phase change.</p>
+
+      <h3>Large Breed and Giant Breed Strategy</h3>
+      <p>Large and giant breeds require controlled growth to reduce orthopedic strain. If you are tracking german shepherd weight calculator, great dane weight, or giant breed development, avoid the assumption that faster is better. Excess early growth can increase stress on joints and soft tissues. Keep diet quality high, protein appropriate, and energy intake measured.</p>
+      <p>Use dog growth calculator outputs with regular condition checks. If gains are too fast, adjust gradually. Do not apply crash reductions.</p>
+
+      <h3>Breed-Specific Query Notes</h3>
+      <p>Many users search breed-specific weight phrases. Here is practical context: Yorkie weight calculator and Chihuahua growth chart queries usually need small-breed management principles. German shepherd weight calculator and Labrador puppy queries need large-breed pace control. French bulldog weight and Pug puppy searches often need careful body condition monitoring to avoid chronic over-conditioning. Great Dane weight and Saint Bernard puppy queries need long-horizon growth planning and joint-safe exercise progression.</p>
+
+      <h3>Labrador Puppy and Lab Puppy Growth</h3>
+      <p>Labrador puppy owners often ask for month-by-month expectations. A lab puppy usually benefits from structured weekly tracking rather than rough visual guesses. Use your dog weight calculator to maintain consistency and compare trend pace to expected class behavior. If your Labrador puppy is gaining faster than expected with rising body condition, reduce excess treat intake first before changing complete diet strategy.</p>
+
+      <h3>German Shepherd Weight Calculator Use Case</h3>
+      <p>German Shepherd development often includes growth spurts and lean phases. A german shepherd weight calculator query should be answered with trend-based monitoring, not single-point judgment. Keep records of age, weight, body condition, and activity load. If condition remains ideal, moderate variation in weight trajectory can still be normal.</p>
+
+      <h3>French Bulldog Weight and Short-Muzzle Breeds</h3>
+      <p>French bulldog weight searches often come from owners worried about either underweight or over-conditioning. For compact breeds, body condition quality matters as much as scale value. Keep weight tracking consistent and avoid frequent overfeeding through treats. A dog weight chart can help context, but personalised monitoring wins.</p>
+
+      <h3>Great Dane Weight and Giant Growth Windows</h3>
+      <p>Great Dane weight concerns usually involve rapid skeletal growth. For giant breeds, early overfeeding can create problems later. Use puppy growth calculator logic with measured feeding and controlled activity progression. Build strength gradually and avoid repetitive high-impact loading during development.</p>
+
+      <h3>Puppy Feeding Chart Integration</h3>
+      <p>A puppy feeding chart is useful when linked to growth outcomes. Do not treat feeding charts as fixed forever. Update portions using trend data from your puppy weight calculator. If your dog is under target and lean, increase intake gradually. If above target with rising fat cover, reduce gradually and monitor weekly.</p>
+
+      <h3>Weekly Monitoring Framework</h3>
+      <p>A reliable weekly template includes date, age, current weight, predicted low/high/midpoint, body condition score, appetite notes, stool notes, activity level, and feeding amount. This simple log turns a dog size calculator into an actual management system. After four to six entries, trend clarity improves significantly.</p>
+
+      <h3>Interpreting Unexpected Changes</h3>
+      <p>If projection jumps unexpectedly, check basic errors first: wrong age unit, wrong size class, scale inconsistency, or conversion mismatch. If data is clean and unusual changes continue, review health signals. Persistent appetite loss, digestive changes, or unusual fatigue should be assessed by a veterinarian.</p>
+
+      <h3>Mixed-Breed Dogs: Practical Forecasting</h3>
+      <p>Mixed-breed owners often worry about uncertainty. The best strategy is scenario tracking. Run two adjacent size classes and compare with real trend over time. Use structure clues such as chest depth, limb proportion, and paw-to-body relation. You may not get exact early precision, but you can usually narrow a practical adult class and range for planning.</p>
+
+      <h3>Dog Weight Estimator and Dog Size Predictor for Adults</h3>
+      <p>Adult dogs still benefit from a dog weight estimator framework. Maintenance phase is about drift control. If weight rises above healthy zone, tighten total intake gradually and increase appropriate activity. If weight falls unexpectedly, investigate appetite, digestion, and health context. Regular tracking catches trends earlier than occasional checks.</p>
+
+      <h3>How to Use Internal Tools on This Site</h3>
+      <p>Start with the calculator fields at the top of this page. Then use the quick dog weight converter for kg/lb adjustments. Next, review the puppy weight chart and dog growth guide for context. Finally, read detailed blog guides for specific scenarios. This internal flow supports both quick answers and deeper decision-making.</p>
+
+      <h3>Common Mistakes to Avoid</h3>
+      <p>Do not rely on one weigh-in. Do not compare your dog to random internet photos. Do not over-correct food portions after one unusual week. Do not ignore body condition while focusing only on numbers. Do not assume breed labels guarantee one final result. Consistent process beats emotional guesswork.</p>
+
+      <h3>How This Content Is Keyword-Optimised</h3>
+      <p>This section intentionally addresses high-value intents such as puppy weight calculator, dog weight calculator, puppy growth calculator, dog size calculator, puppy size estimator, dog weight predictor, puppy growth chart, dog growth chart, puppy weight chart, how big will my puppy get, how much will my dog weigh, and when do puppies stop growing. It also includes breed-related terms for practical context and topical depth.</p>
+
+      <h3>Long-Term Health Perspective</h3>
+      <p>Healthy growth is not about reaching the highest number quickly. It is about reaching an appropriate adult composition with good mobility, stable energy, and strong resilience. Controlled growth, data-driven feeding decisions, and timely review are the foundations of success. A well-used dog weight calculator supports all three.</p>
+
+      <h3>Action Plan You Can Start Today</h3>
+      <p>Weigh your dog today, run the calculator, and note range plus midpoint. Repeat next week at the same time and compare direction. Keep one log. Make small, evidence-based adjustments. Use chart context, calculator projections, and body condition checks together. If something looks persistently wrong, involve your veterinarian early.</p>
+      <p>When used this way, a dog weight calculator becomes more than a tool. It becomes a practical system for better puppy growth decisions, better adult maintenance, and stronger long-term health outcomes.</p>
+
+      <h3>Keyword Cluster: Calculator, Chart, Estimator, Predictor</h3>
+      <p>Many searchers move between terms such as puppy weight calculator, dog weight calculator, dog size calculator, puppy size calculator, puppy weight estimator, dog weight estimator, dog weight predictor, and dog size predictor. These terms are closely connected, but user intent changes slightly. Some users need a quick adult estimate. Others need a growth benchmark from a puppy weight chart or dog growth chart. This page is designed to serve all of those intents in a logical flow: calculate first, compare against chart context, then read interpretation guidance before making feeding or care decisions.</p>
+      <p>The same applies to query pairs like puppy growth chart versus puppy growth calculator, or dog weight chart versus dog weight calculator. Charts provide broad visual expectation by age and size class, while calculators give personalised outputs from your specific numbers. If you combine both, decisions are far more reliable than relying on either one in isolation. That is why this site includes calculator fields, growth chart references, FAQs, and long-form explainers in one place.</p>
+
+      <h3>UK-Focused Use Cases and Unit Consistency</h3>
+      <p>For UK owners, unit consistency is a common issue. Some vet notes are in kilograms while accessories and online communities may reference pounds. The built-in converter helps reduce conversion mistakes. If you are tracking weekly growth, pick one primary unit for your log and convert only when necessary for sharing. This keeps trend analysis cleaner. Whether you are searching for "lb to kg" checks or using a dog weight calculator in kg only, consistent data entry improves output quality over time.</p>
+      <p>In practical terms, if your dog is on the edge of a size class, a small conversion mistake can create unnecessary concern. Accurate entry protects decision quality. This is especially important for new owners who are tracking a labrador puppy, french bulldog weight progression, or german shepherd growth pace and want weekly comparisons to remain meaningful.</p>
+
+      <h3>Breed-Intent Expansion for Long-Tail SEO</h3>
+      <p>Long-tail searches often include breed names plus weight intent. Examples include yorkie weight calculator, german shepherd weight calculator, chihuahua growth chart, great dane weight, labrador puppy weight, and french bulldog weight by age. Even when a tool is not breed-specific, these searches can still be satisfied by clear size-class guidance plus transparent limitations. Breed genetics influence growth pace, but trend tracking and body condition monitoring remain universally useful across breeds and mixes.</p>
+      <p>If you own a mixed-breed dog, the same logic applies. You can still use puppy size calculator methods to estimate realistic adult class and range. Start with the closest frame type, record weekly trends, and refine over time. This approach is more practical than waiting for certainty before taking action on feeding, exercise, and equipment planning.</p>
+
+      <h3>Final SEO + UX Summary</h3>
+      <p>This homepage now supports both quick and deep intent. Users who want instant answers can use the dog weight calculator fields directly after the H1. Users who need deeper confidence can continue into chart guidance, FAQ answers, and long-form content that explains how to interpret projections responsibly. From an SEO perspective, the page covers core transactional-informational hybrids such as puppy weight calculator, dog weight calculator, puppy growth calculator, and how big will my puppy get, while also supporting comparison terms like dog growth chart and puppy weight chart.</p>
+      <p>From a UX perspective, the priority remains clarity: calculate first, interpret second, optimise decisions third. That structure helps users get fast value without skipping critical context. Over time, this improves engagement quality, reduces bounce from mismatched expectations, and strengthens topical authority for dog growth and weight estimation intent clusters.</p>
     </section>
   </main>
 

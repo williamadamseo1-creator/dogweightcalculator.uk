@@ -38,7 +38,7 @@ body {
 }
 
 .hero {
-  padding: 1rem 1rem 2.6rem;
+  padding: 1rem 1rem 1.3rem;
 }
 
 .site-nav-wrap {
@@ -55,8 +55,16 @@ body {
   color: #0f3454;
   font-weight: 800;
   letter-spacing: 0.01em;
-  font-size: 0.98rem;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
   white-space: nowrap;
+  display: inline-block;
+}
+
+.site-brand:visited,
+.site-brand:hover,
+.site-brand:active {
+  color: #0f3454;
+  text-decoration: none;
 }
 
 .top-nav {
@@ -90,15 +98,19 @@ body {
   margin: 0 auto;
 }
 
-.hero-layout {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) 250px;
-  align-items: center;
+.calculator-abovefold {
+  margin-top: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
-.hero-layout > div {
-  min-width: 0;
+.calculator-abovefold h2 {
+  margin-bottom: 0.8rem;
+}
+
+.tool-followup {
+  display: grid;
+  gap: 0.8rem;
+  align-items: start;
 }
 
 .eyebrow {
@@ -125,7 +137,7 @@ h1 {
 
 .subhead {
   margin: 0;
-  max-width: 50ch;
+  max-width: 62ch;
   color: var(--ink-soft);
   font-size: 1.01rem;
   overflow-wrap: anywhere;
@@ -133,7 +145,7 @@ h1 {
 
 .hero-media {
   margin: 0;
-  width: 100%;
+  width: min(100%, 620px);
   border: 1px solid #dae6f1;
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.72);
@@ -161,7 +173,7 @@ h1 {
 
 main {
   max-width: 1040px;
-  margin: -1.8rem auto 2.5rem;
+  margin: 1rem auto 2.5rem;
   padding: 0 1rem;
   display: grid;
   gap: 1rem;
@@ -423,6 +435,21 @@ th {
   font-size: 0.92rem;
 }
 
+.long-guide {
+  line-height: 1.72;
+}
+
+.long-guide h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.45rem;
+  font-size: 1.18rem;
+}
+
+.long-guide p {
+  margin: 0.62rem 0;
+  color: #223444;
+}
+
 .size-grid {
   display: grid;
   gap: 0.9rem;
@@ -491,11 +518,11 @@ th {
 
   .hero {
     padding-top: 0.8rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
 
   main {
-    margin-top: -1.2rem;
+    margin-top: 0.35rem;
     padding: 0 0.75rem;
   }
 
@@ -523,9 +550,9 @@ th {
     text-align: center;
   }
 
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
+  .tool-followup {
+    gap: 0.7rem;
+    justify-items: center;
   }
 
   .hero-media {
@@ -544,7 +571,7 @@ th {
   }
 
   .cta {
-    margin-top: 0.85rem;
+    margin-top: 0.25rem;
   }
 
   .calculator h2 {
@@ -586,6 +613,6 @@ th {
   }
 
   .site-brand {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
