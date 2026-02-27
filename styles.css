@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -26,6 +28,9 @@ body {
   font-family: Manrope, "Segoe UI", sans-serif;
   color: var(--ink);
   line-height: 1.55;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   background:
     radial-gradient(1200px 700px at 110% -10%, #ffdeac 0%, transparent 50%),
     radial-gradient(800px 500px at -10% 10%, #cee8ff 0%, transparent 52%),
@@ -53,6 +58,7 @@ body {
   border: 1px solid #dce6ee;
   padding: 0.45rem 0.75rem;
   border-radius: 999px;
+  white-space: nowrap;
 }
 
 .hero-content {
@@ -126,6 +132,7 @@ main {
   padding: 0 1rem;
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
 
 .card {
@@ -137,6 +144,9 @@ main {
   opacity: 0;
   transform: translateY(10px);
   animation: rise 450ms ease forwards;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .card:nth-child(2) {
@@ -170,12 +180,15 @@ label {
   gap: 0.35rem;
   font-weight: 700;
   font-size: 0.95rem;
+  min-width: 0;
 }
 
 input,
 select,
 button {
   font: inherit;
+  width: 100%;
+  max-width: 100%;
 }
 
 input,
@@ -286,6 +299,7 @@ button[type="submit"] {
 .table-wrap {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid #dce5ee;
   border-radius: 0.8rem;
 }
@@ -320,6 +334,22 @@ th {
   margin: 0.95rem 0 0;
   font-size: 0.92rem;
   color: #334a5f;
+}
+
+.step-list {
+  margin: 0.5rem 0 0.35rem;
+  padding-left: 1.25rem;
+}
+
+.step-list li {
+  margin-bottom: 0.4rem;
+}
+
+.howto-note,
+.chart-tip {
+  margin: 0.45rem 0 0;
+  color: #334a5f;
+  font-size: 0.92rem;
 }
 
 .size-grid {
@@ -392,6 +422,15 @@ th {
     padding-bottom: 3rem;
   }
 
+  main {
+    margin-top: -1.2rem;
+    padding: 0 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
   .top-nav {
     justify-content: center;
     margin-bottom: 1.3rem;
@@ -435,5 +474,12 @@ th {
 
   .converter-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+    padding: 0 0.75rem;
   }
 }

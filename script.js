@@ -83,6 +83,13 @@ function getVariance(ageWeeks) {
   return 0.1;
 }
 
+function getAdultSizeLabel(adultKg) {
+  if (adultKg < 10) return "Small";
+  if (adultKg < 25) return "Medium";
+  if (adultKg < 40) return "Large";
+  return "Giant";
+}
+
 function formatNumber(value) {
   return Number.parseFloat(value).toFixed(1);
 }
@@ -152,6 +159,7 @@ form.addEventListener("submit", (event) => {
   const midLb = adultKg * KG_TO_LB;
   const lowLb = lowKg * KG_TO_LB;
   const highLb = highKg * KG_TO_LB;
+  const adultSize = getAdultSizeLabel(adultKg);
 
   const confidence = variance <= 0.1 ? "Higher confidence window" : "Lower confidence window";
   const confidenceText = variance <= 0.1
@@ -164,6 +172,7 @@ form.addEventListener("submit", (event) => {
       <p><strong>Estimated Adult Weight:</strong></p>
       <p><strong>${formatNumber(lowKg)}-${formatNumber(highKg)} kg</strong> (${formatNumber(lowLb)}-${formatNumber(highLb)} lb)</p>
       <p>Most likely midpoint: <strong>${formatNumber(adultKg)} kg</strong> (${formatNumber(midLb)} lb)</p>
+      <p>Predicted adult size class: <strong>${adultSize}</strong></p>
       <p><strong>${confidence}</strong>: ${confidenceText}</p>
       <p>For feeding and health plans, confirm with your vet.</p>
     `
