@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -96,6 +97,8 @@ body {
 .hero-content {
   max-width: 1040px;
   margin: 0 auto;
+  width: 100%;
+  min-width: 0;
 }
 
 .calculator-abovefold {
@@ -111,6 +114,9 @@ body {
   display: grid;
   gap: 0.8rem;
   align-items: start;
+  justify-items: start;
+  width: 100%;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -141,10 +147,11 @@ h1 {
   color: var(--ink-soft);
   font-size: 1.01rem;
   overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .hero-media {
-  margin: 0;
+  margin: 0 auto;
   width: min(100%, 620px);
   border: 1px solid #dae6f1;
   border-radius: 1rem;
@@ -157,6 +164,14 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+li {
+  overflow-wrap: anywhere;
 }
 
 .cta {
@@ -450,6 +465,10 @@ th {
   color: #223444;
 }
 
+.long-guide {
+  font-size: 1rem;
+}
+
 .size-grid {
   display: grid;
   gap: 0.9rem;
@@ -614,5 +633,26 @@ th {
 
   .site-brand {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .site-nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .top-nav {
+    width: 100%;
+  }
+
+  .calculator-abovefold {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tool-followup {
+    justify-items: center;
   }
 }

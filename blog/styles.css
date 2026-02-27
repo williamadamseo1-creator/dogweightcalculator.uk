@@ -26,6 +26,7 @@ body {
   font-family: Manrope, "Segoe UI", sans-serif;
   color: var(--ink);
   line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
   background:
     radial-gradient(1000px 520px at 100% -10%, #ffe7b9 0%, transparent 55%),
     radial-gradient(900px 460px at -10% 5%, #d7ebff 0%, transparent 54%),
@@ -85,6 +86,7 @@ a {
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-bottom: 2.2rem;
+  min-width: 0;
 }
 
 .card {
@@ -100,6 +102,7 @@ a {
   margin: 0 0 0.5rem;
   font-size: 1.3rem;
   line-height: 1.28;
+  overflow-wrap: anywhere;
 }
 
 .card-main-link {
@@ -127,6 +130,7 @@ a {
 .excerpt {
   margin: 0.65rem 0 0.9rem;
   color: #304252;
+  overflow-wrap: anywhere;
 }
 
 .btn {
@@ -300,5 +304,11 @@ a {
   .article p,
   .article li {
     font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
